@@ -30,6 +30,7 @@ body {
 
 main {
     margin: 25px;
+    flex: 1 0 auto; /* sticky footer */
 }
 
 h1 {
@@ -102,6 +103,7 @@ span {
     color: var(--pink);
     font-weight: 400;
 }
+
 
 .attribution {
     font-size: 11px;
