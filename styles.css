@@ -43,6 +43,7 @@ h1 {
 .heading > p {
     color: var(--darkGrayMagenta);
     text-align: center;
+    line-height: 1.8;
 }
 
 .rating-container {
@@ -66,8 +67,9 @@ h1 {
 }
 
 .review-container {
-    width: 100%;
     display: flex;
+    line-height: 1.6;
+    width: 100%;
     flex-direction: column;
     align-items: center;
     gap: 20px;
@@ -83,7 +85,6 @@ article {
     color: var(--lightGrayMagenta);
     border-radius: 8px;
     padding: 40px 30px;
-    max-width: 360px;
 }
 
 article > header {
@@ -104,48 +105,72 @@ span {
     font-weight: 400;
 }
 
+footer {
+    font-size: 0.75rem;
+    line-height: 1.8;
+    margin: 50px 0 20px 0;
+}
 
-.attribution {
-    font-size: 11px;
-    text-align: center;
-  }
-  .attribution a {
-    color: hsl(228, 45%, 44%);
-  }
+footer a {
+    color: var(--darkMagenta);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+footer a:active {
+    border: 2px dotted var(--pink);
+}
 
 
-  @media (min-width: 870px) {
+  @media (min-width: 1040px) {
+
+    body {
+        background-image: url(images/bg-pattern-top-desktop.svg), url(images/bg-pattern-bottom-desktop.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 
     main {
-        max-width: 1100px;
-        margin: 0 40px;
+        max-width: 1200px;
+        margin: 100px 40px 0 40px;
     }
 
     h1 {
+        max-width: 450px;
         font-size: 3rem;
         margin-top: 0;
+        margin-bottom: 10px;
     }
 
     h1, .heading > p {
         text-align: left;
+        max-width: 480px;
     }
       
     .desktop-top {     
         display: flex; 
+        justify-content: space-between;
         gap: 60px;
-        margin-bottom: 60px;
+        margin-bottom: 50px;
     }
- 
+
     .rating-container {      
         min-width: 50%;  
         margin: 0;
         justify-content: space-between;
+        align-items: flex-end;
     }
 
     .rating {
         display: flex;
         gap: 30px;
         align-items: center;
+        margin-left: 60px;
+        width: 100%;
         max-width: 450px;
     }
 
@@ -154,12 +179,12 @@ span {
         margin-left: 40px;
     }
 
-    .rating-2 {
-        margin-left: 50px;
+    .rating-1 {
+        margin-right: 100px;
     }
 
-    .rating-3 {
-        margin-left: 100px;
+    .rating-2 {
+        margin-right: 50px;
     }
 
     .review-container {
@@ -168,7 +193,8 @@ span {
     }
 
     article {
-        height: 240px;
+        width: 85%;
+        height: 270px;
     }
 
     .profile-img {
@@ -176,10 +202,12 @@ span {
     }
 
     .review-2 {
-        margin-top: 30px;
+        margin-top: 35px;
     }
 
     .review-3 {
-        margin-top: 60px;
+        margin-top: 70px;
     }  
 }
+
+/* ratings länger machen? weiteren breakpoint einfügen -> schriftgröße anpassen, boxgrößen anpassen und reviewboxen kleiner machen */
