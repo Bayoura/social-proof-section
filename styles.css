@@ -19,6 +19,7 @@
 body {
     background-image: url(images/bg-pattern-top-mobile.svg), url(images/bg-pattern-bottom-mobile.svg);
     background-repeat: no-repeat;
+    background-position: 0% 0%, bottom left;
     font-family: 'Spartan', sans-serif;
     font-size: 0.9375rem; /* 15px */
     display: flex;
@@ -33,18 +34,23 @@ main {
     flex: 1 0 auto; /* sticky footer */
 }
 
+.heading {
+    text-align: center;
+}
+
 h1 {
     color: var(--darkMagenta);
-    text-align: center;
     margin-bottom: 30px;
     margin-top: 70px;
+    padding: 0 20px;
 }
 
 .heading > p {
     color: var(--darkGrayMagenta);
-    text-align: center;
     line-height: 1.8;
 }
+
+/* --------------------RATINGS------------------ */
 
 .rating-container {
     display: flex;
@@ -55,21 +61,24 @@ h1 {
 
 .rating {
     background-color: var(--lightGrayMagenta);
+    border-radius: 8px;
     color: var(--darkMagenta);
     font-weight: 700;
-    border-radius: 8px;
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
+    
 }
 
 .stars {
     margin-bottom: 15px;
 }
 
+/* ------------------REVIEWS---------------------- */
+
 .review-container {
-    display: flex;
     line-height: 1.6;
     width: 100%;
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
@@ -84,7 +93,7 @@ article {
     background-color: var(--darkMagenta);
     color: var(--lightGrayMagenta);
     border-radius: 8px;
-    padding: 40px 30px;
+    padding: 25px 20px;
 }
 
 article > header {
@@ -104,6 +113,8 @@ span {
     color: var(--pink);
     font-weight: 400;
 }
+
+/* --------------------FOOOTER------------------------ */
 
 footer {
     font-size: 0.75rem;
@@ -125,13 +136,40 @@ footer a:active {
     border: 2px dotted var(--pink);
 }
 
+/* --------------------MEDIA-QUERIES-------------------- */
 
-  @media (min-width: 1040px) {
+@media (min-width: 480px) {
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .rating {
+        padding: 20px 0;
+    }
+
+    article {
+        padding: 40px 30px;
+    }
+}
+
+@media (min-width: 768px) {
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .profile-img {
+        max-width: 40px;
+    }
+}
+  
+@media (min-width: 1040px) {
 
     body {
         background-image: url(images/bg-pattern-top-desktop.svg), url(images/bg-pattern-bottom-desktop.svg);
-        background-size: cover;
         background-repeat: no-repeat;
+        background-position: 0% 0%, bottom;
     }
 
     main {
@@ -149,6 +187,7 @@ footer a:active {
     h1, .heading > p {
         text-align: left;
         max-width: 480px;
+        padding: 0;
     }
       
     .desktop-top {     
@@ -158,8 +197,7 @@ footer a:active {
         margin-bottom: 50px;
     }
 
-    .rating-container {      
-        min-width: 50%;  
+    .rating-container {       
         margin: 0;
         justify-content: space-between;
         align-items: flex-end;
@@ -197,10 +235,6 @@ footer a:active {
         height: 270px;
     }
 
-    .profile-img {
-        max-width: 40px;
-    }
-
     .review-2 {
         margin-top: 35px;
     }
@@ -209,5 +243,3 @@ footer a:active {
         margin-top: 70px;
     }  
 }
-
-/* ratings länger machen? weiteren breakpoint einfügen -> schriftgröße anpassen, boxgrößen anpassen und reviewboxen kleiner machen */
